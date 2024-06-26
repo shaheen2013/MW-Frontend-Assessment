@@ -14,6 +14,13 @@ export default {
         "gray-7": "#344054",
         "base-bg": "#E6EFF7",
     },
+    keyframes: {
+     fadeIn: {
+      "0%": {
+        
+      }
+     }
+    }
     },
   },
   plugins: [],

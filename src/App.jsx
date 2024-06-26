@@ -8,7 +8,7 @@ function App() {
     <>
       <Header />
       <div className=" bg-gradient-to-l from-[#EEF4F9] from-10% via-[#EAF7F5] via-30% to-[#EEF4F9] to-90%">
-        <div className="container m-auto">
+        <div className="px-20 m-auto">
           <BlogHero />
           <AllBlogs />
         </div>
