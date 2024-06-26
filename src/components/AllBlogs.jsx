@@ -3,6 +3,7 @@ import BlogCard from "./BlogCard";
 
 const AllBlogs = () => {
   const [categories, setCategories] = useState([]);
+  const [blogs, setBlogs] = useState([]);
   const [activeCategory, setActiveCategory] = useState("case-studies");
   const getBlogCategories = async () => {
     const res = await fetch(
@@ -12,8 +13,15 @@ const AllBlogs = () => {
     setCategories(data);
   };
 
+  const getBlogs = async () => {
+    const res = await fetch("https://hr.mediusware.xyz/api/website/blogs/");
+    const data = await res.json();
+    setBlogs(data.results);
+  };
+
   useEffect(() => {
     getBlogCategories();
+    getBlogs();
   }, []);
 
   return (
@@ -24,29 +32,28 @@ const AllBlogs = () => {
         </p>
       </div>
       <div className="flex items-center flex-wrap justify-center gap-4 sm:py-12 py-5">
-        {categories?.map((item, index) => (
-          <div key={index}>
-            <button
-              className={` sm:py-[11px] py-1  sm:px-6 px-4 border rounded-xl ${item.slug === activeCategory ? "bg-[#0060AF] text-white" : "bg-white" } flex items-center justify-center`}
-            >
-              {item.name}{" "}
-              <span
-                className={`rounded-full ms-1  text-slate-700 bg-[#EAECF0] h-[20px] w-[20px] flex items-center justify-center`}
+        {categories &&
+          categories?.map((item, index) => (
+            <div key={index}>
+              <button
+                className={` sm:py-[11px] py-1  sm:px-6 px-4 border rounded-xl ${
+                  item.slug === activeCategory
+                    ? "bg-[#0060AF] text-white"
+                    : "bg-white"
+                } flex items-center justify-center`}
               >
-                {item.total_blog}
-              </span>
-            </button>
-          </div>
-        ))}
+                {item.name}{" "}
+                <span
+                  className={`rounded-full ms-1  text-slate-700 bg-[#EAECF0] h-[20px] w-[20px] flex items-center justify-center`}
+                >
+                  {item.total_blog}
+                </span>
+              </button>
+            </div>
+          ))}
       </div>
       <div className="grid grid-cols-3 pb-4 gap-y-12">
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
+        {blogs && blogs?.map((item, index) => <BlogCard data={item} key={index} />)}
       </div>
     </div>
   );
