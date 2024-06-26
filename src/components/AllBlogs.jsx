@@ -25,8 +25,6 @@ const AllBlogs = () => {
     fetchData();
   }, [])
 
-  console.log(data?.count);
-
   return (
     <div className="px-[150px]">
       <div className="w-full flex items-center justify-center gap-3 md:flex-row flex-col">
