@@ -5,7 +5,7 @@ import "./index.style.css";
 import { useState } from "react";
 import { motion, MotionConfig } from "framer-motion";
 
-const Blogcard = () => {
+const Blogcard = ({post}) => {
 
   const [hovered, setHovered] = useState(false);
 
@@ -22,7 +22,7 @@ const Blogcard = () => {
         <FaRegClock /> 8 min read
       </div>
       {/* card image */}
-      <img src="/images/image.jpg" className="rounded-xl w-full h-full"/>
+      <img src={post?.image} className="rounded-xl w-full h-full"/>
       {/* redirect button */}
       <button className="absolute top-[30%] left-[50%] translate-y-[-30%] translate-x-[-50%] bg-sky-50 opacity-80 text-sky-700 p-4 rounded-full">
         <GrLinkUp className="h-10 w-10 rotate-45" />
@@ -35,11 +35,11 @@ const Blogcard = () => {
             <div className="flex bg-white pt-4 pb-0 px-4 rounded-t-xl gap-4 items-center relative z-30">
               {/* author avatar */}
               <div className="h-[60px] w-[60px] rounded-full overflow-hidden">
-                <img src="/images/avatar.jpg" className="h-full w-full object-cover" />
+                <img src={post?.author?.image} className="h-full w-full object-cover" />
               </div>
               {/* author name */}
               <div className="flex flex-col">
-                  <h4>Ronald Richards</h4>
+                  <h4>{post?.author?.full_name}</h4>
                   <p>20 Jan 2022</p>
               </div>
               {/* curve */}

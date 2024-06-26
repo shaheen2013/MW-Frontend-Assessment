@@ -14,14 +14,14 @@ const AllBlogs = () => {
           "Content-Type": "application/json",
         },
       });
-      console.log(await res.json());
-      setBlogs(await res.json());
+      const data = await res.json();
+      setBlogs(data);
     }
    fetchblog();
   }, [])
 
   useEffect(() => {
-    console.log(blogs)
+    console.log("Blog data",blogs)
   }, [blogs])
 
 
@@ -103,9 +103,14 @@ const AllBlogs = () => {
 
       {/* All blog post */}
       <div className="w-full grid grid-cols-3 gap-4">
-            <Blogcard />
-            <Blogcard />
-            <Blogcard />
+        {
+          blogs?.results.map((post) => (
+
+            <Blogcard key={post?.id} post={post} />
+          ))
+        }
+            {/* <Blogcard />
+            <Blogcard /> */}
       </div>
 
 
