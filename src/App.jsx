@@ -33,7 +33,7 @@ export default function App() {
 
       <div className="bg-gradient-to-l from-[#EEF4F9] from-10% via-[#EAF7F5] via-30% to-[#EEF4F9] to-90%">
         <BlogHero />
-        <h1 className="text-[48px] text-center font-circular font-bold leading-[60px] tracking-[-0.5px] uppercase text-primary-blue">
+        <h1 className="text-center font-circular font-bold uppercase text-primary-blue md:text-[48px] text-[32px] leading-[40px] md:leading-[60px] tracking-[-0.5px]">
           ALL <span className="text-primary-green">BLOGS</span>
         </h1>
         <BlogTags />

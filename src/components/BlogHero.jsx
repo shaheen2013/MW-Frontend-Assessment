@@ -20,8 +20,8 @@
 
 export default function BlogHero() {
   return (
-    <div className="flex items-center justify-center py-[112px]">
-      <h1 className="text-[80px] font-circular font-bold leading-[90px] tracking-[-0.5px] uppercase text-primary-blue">
+    <div className="flex items-center justify-center py-10 md:py-28">
+      <h1 className="text-2xl md:text-[80px] font-circular font-bold leading-[40px] md:leading-[90px] tracking-[-0.5px] uppercase text-primary-blue text-center">
         READ INSIGHTFUL <span className="text-primary-green">ARTICLES</span>
       </h1>
     </div>
