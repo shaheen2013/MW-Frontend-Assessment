@@ -1,4 +1,4 @@
-import Button from "./Button";
+import BlogCard from "./BlogCard";
 
 const BlogHero = () => {
   return (

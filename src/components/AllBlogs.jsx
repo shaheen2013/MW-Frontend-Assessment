@@ -1,3 +1,5 @@
+import BlogCard from "./BlogCard";
+
 const AllBlogs = () => {
   return (
     <div className="container">
@@ -24,7 +26,9 @@ const AllBlogs = () => {
             className={` sm:py-[11px] py-1  sm:px-6 px-4 border rounded-3xl bg-white`}
           >
             Frontend{" "}
-            <span className={`px-[6px] py-1  rounded-lg ms-1 bg-[#EAECF0] h-[20px] `}>
+            <span
+              className={`px-[6px] py-1  rounded-lg ms-1 bg-[#EAECF0] h-[20px] `}
+            >
               5
             </span>
           </button>
@@ -34,11 +38,22 @@ const AllBlogs = () => {
             className={` sm:py-[11px] py-1  sm:px-6 px-4 border rounded-3xl bg-white`}
           >
             Node.js{" "}
-            <span className={`px-[6px] py-1  rounded-lg ms-1 bg-[#EAECF0] h-[20px]`}>
+            <span
+              className={`px-[6px] py-1  rounded-lg ms-1 bg-[#EAECF0] h-[20px]`}
+            >
               5
             </span>
           </button>
         </div>
+      </div>
+      <div className="grid grid-cols-3 pb-4 gap-y-12">
+        <BlogCard />
+        <BlogCard />
+        <BlogCard />
+        <BlogCard />
+        <BlogCard />
+        <BlogCard />
+        <BlogCard />
       </div>
     </div>
   );
