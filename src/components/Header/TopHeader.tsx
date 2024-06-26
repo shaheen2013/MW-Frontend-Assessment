@@ -58,19 +58,6 @@ const TopHeader = () => {
               />
             </a>
 
-            {/* <Link
-                            href="https://twitter.com/mediuswareltd?lang=en"
-                            target="_blank"
-                        >
-                            <Image
-                                src="/assets/Header/twitter.svg"
-                                className="lg:mr-2 mr-1"
-                                alt="Twitter Logo - Link to Mediusware Twitter Page"
-                                height={17}
-                                width={17}
-                            />
-                        </Link> */}
-
             <a
               href="https://www.linkedin.com/company/mediusware-ltd/"
               target="_blank"
